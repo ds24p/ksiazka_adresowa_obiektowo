@@ -1,0 +1,48 @@
+# depslib dependency file v1.0
+1718564474 source:c:\projects\ksiazka_adresowa_obiektowo\ksiazkaadresowa.cpp
+	"KsiazkaAdresowa.h"
+
+1718564474 c:\projects\ksiazka_adresowa_obiektowo\ksiazkaadresowa.h
+	<iostream>
+	"UzytkownikMenedzer.h"
+
+1718564474 c:\projects\ksiazka_adresowa_obiektowo\uzytkownikmenedzer.h
+	<iostream>
+	<vector>
+	<windows.h>
+	<fstream>
+	<sstream>
+	"Uzytkownik.h"
+	"PlikZUzytkownikami.h"
+
+1708050623 c:\projects\ksiazka_adresowa_obiektowo\uzytkownik.h
+	<iostream>
+
+1718571565 c:\projects\ksiazka_adresowa_obiektowo\plikzuzytkownikami.h
+	<iostream>
+	<vector>
+	<fstream>
+	<cstdlib>
+	"Uzytkownik.h"
+	"MetodyPomocnicze.h"
+
+1708050624 c:\projects\ksiazka_adresowa_obiektowo\metodypomocnicze.h
+	<iostream>
+	<sstream>
+
+1708050623 source:c:\projects\ksiazka_adresowa_obiektowo\metodypomocnicze.cpp
+	"MetodyPomocnicze.h"
+
+1718571526 source:c:\projects\ksiazka_adresowa_obiektowo\plikzuzytkownikami.cpp
+	"PlikZUzytkownikami.h"
+
+1708050624 source:c:\projects\ksiazka_adresowa_obiektowo\uzytkownik.cpp
+	"Uzytkownik.h"
+
+1708050624 source:c:\projects\ksiazka_adresowa_obiektowo\uzytkownikmenedzer.cpp
+	"UzytkownikMenedzer.h"
+
+1718566259 source:c:\projects\ksiazka_adresowa_obiektowo\main.cpp
+	<iostream>
+	"KsiazkaAdresowa.h"
+
