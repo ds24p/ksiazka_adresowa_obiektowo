@@ -100,3 +100,17 @@ Uzytkownik PlikZUzytkownikami::pobierzDaneUzytkownika(string daneJednegoUzytkown
     }
     return uzytkownik;
 }
+
+void PlikZUzytkownikami::aktualizujPlikZUzytkownikami(vector <Uzytkownik> &uzytkownicy)
+{
+    fstream plik;
+    plik.open(nazwaPlikuZUzytkownikami.c_str(), ios::out);
+
+    for (size_t i = 0; i < uzytkownicy.size(); i++)
+    {
+        plik << uzytkownicy[i].pobierzId() << "|";
+        plik << uzytkownicy[i].pobierzLogin()<< "|";
+        plik << uzytkownicy[i].pobierzHaslo() << "|" << endl;
+    }
+    plik.close();
+}
