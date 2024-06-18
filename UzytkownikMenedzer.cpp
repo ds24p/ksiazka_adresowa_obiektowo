@@ -142,3 +142,16 @@ bool UzytkownikMenedzer::czyZalogowanoUzytkownika()
     }
     return false;
 }
+
+void UzytkownikMenedzer::wylogujUzytkownika()
+{
+    if(!czyZalogowanoUzytkownika())
+    {
+        cout << "Zaden uzytkownik nie jest zalogowany" << endl;
+    }
+    else
+    {
+        idZalogowanegoUzytkownika = 0;
+        cout << "Wylogowano" << endl;
+    }
+}
