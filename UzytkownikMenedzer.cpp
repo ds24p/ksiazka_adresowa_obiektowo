@@ -68,3 +68,41 @@ void UzytkownikMenedzer::wczytajUzytkownikowZPliku()
 {
     uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
 }
+
+
+void UzytkownikMenedzer::logowanieUzytkownika()
+{
+    string login, haslo;
+    bool czyZalogowano = false;
+    int proba = 3;
+    cout << "Podaj nazwe uzytkownika: ";
+    login = MetodyPomocnicze::wczytajLinie();
+
+    for (size_t i = 0; i < uzytkownicy.size(); i++)
+    {
+        if(uzytkownicy[i].pobierzLogin() == login)
+        {
+            while(proba > 0)
+            {
+                cout << "Podaj haslo uzytkownika: ";
+                haslo = MetodyPomocnicze::wczytajLinie();
+                if(uzytkownicy[i].pobierzHaslo() == haslo)
+                {
+                    idZalogowanegoUzytkownika = uzytkownicy[i].pobierzId();
+                    czyZalogowano = true;
+                    cout << "Zalogowano." << endl;
+                    break;
+                }
+                else
+                {
+                    proba--;
+                    cout << "Niepoprawne haslo. " << "Pozostalo " << proba << " prob." << endl;
+                }
+            }
+        }
+    }
+    if(!czyZalogowano)
+    {
+        cout << "Nie dnaleziono uzytkownika o podanej nazwie" << endl;
+    }
+}
