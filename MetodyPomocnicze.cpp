@@ -8,3 +8,10 @@ string MetodyPomocnicze::konwerjsaIntNaString(int liczba)
     string str = ss.str();
     return str;
 }
+
+string MetodyPomocnicze::wczytajLinie()
+{
+    string input;
+    getline(cin, input);
+    return input;
+}
