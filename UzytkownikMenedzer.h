@@ -30,6 +30,7 @@ public:
     void logowanieUzytkownika();
     void zmianaHaslaZalogowanegoUzytkownika();
     bool czyZalogowanoUzytkownika();
+    void wylogujUzytkownika();
 };
 
 #endif
