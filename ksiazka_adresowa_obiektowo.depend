@@ -1,12 +1,12 @@
 # depslib dependency file v1.0
-1718743716 source:c:\projects\ksiazka_adresowa_obiektowo\ksiazkaadresowa.cpp
+1718748656 source:c:\projects\ksiazka_adresowa_obiektowo\ksiazkaadresowa.cpp
 	"KsiazkaAdresowa.h"
 
-1718743681 c:\projects\ksiazka_adresowa_obiektowo\ksiazkaadresowa.h
+1718748656 c:\projects\ksiazka_adresowa_obiektowo\ksiazkaadresowa.h
 	<iostream>
 	"UzytkownikMenedzer.h"
 
-1718743461 c:\projects\ksiazka_adresowa_obiektowo\uzytkownikmenedzer.h
+1718750994 c:\projects\ksiazka_adresowa_obiektowo\uzytkownikmenedzer.h
 	<iostream>
 	<vector>
 	<windows.h>
@@ -18,7 +18,7 @@
 1708050623 c:\projects\ksiazka_adresowa_obiektowo\uzytkownik.h
 	<iostream>
 
-1718571891 c:\projects\ksiazka_adresowa_obiektowo\plikzuzytkownikami.h
+1718749152 c:\projects\ksiazka_adresowa_obiektowo\plikzuzytkownikami.h
 	<iostream>
 	<vector>
 	<fstream>
@@ -26,23 +26,23 @@
 	"Uzytkownik.h"
 	"MetodyPomocnicze.h"
 
-1718743461 c:\projects\ksiazka_adresowa_obiektowo\metodypomocnicze.h
+1718744624 c:\projects\ksiazka_adresowa_obiektowo\metodypomocnicze.h
 	<iostream>
 	<sstream>
 
-1718743461 source:c:\projects\ksiazka_adresowa_obiektowo\metodypomocnicze.cpp
+1718744624 source:c:\projects\ksiazka_adresowa_obiektowo\metodypomocnicze.cpp
 	"MetodyPomocnicze.h"
 
-1718572059 source:c:\projects\ksiazka_adresowa_obiektowo\plikzuzytkownikami.cpp
+1718749482 source:c:\projects\ksiazka_adresowa_obiektowo\plikzuzytkownikami.cpp
 	"PlikZUzytkownikami.h"
 
 1708050624 source:c:\projects\ksiazka_adresowa_obiektowo\uzytkownik.cpp
 	"Uzytkownik.h"
 
-1718743582 source:c:\projects\ksiazka_adresowa_obiektowo\uzytkownikmenedzer.cpp
+1718751111 source:c:\projects\ksiazka_adresowa_obiektowo\uzytkownikmenedzer.cpp
 	"UzytkownikMenedzer.h"
 
-1718743844 source:c:\projects\ksiazka_adresowa_obiektowo\main.cpp
+1718748777 source:c:\projects\ksiazka_adresowa_obiektowo\main.cpp
 	<iostream>
 	"KsiazkaAdresowa.h"
 
