@@ -15,11 +15,10 @@ class PlikZAdresatami
 {
     const string nazwaPlikuZAdresatami;
 
-    bool czyPlikJestPusty();
-
 public:
     vector <Adresat> wczytajAdresatowZPliku();
     Adresat pobierzDaneAdresata(string linia);
+    void dopiszAdresataDoPliku(Adresat nowyAdresat);
 };
 
 #endif

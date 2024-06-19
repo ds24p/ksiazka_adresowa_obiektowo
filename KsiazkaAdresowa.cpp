@@ -27,10 +27,10 @@ void KsiazkaAdresowa::wylogujUzytkownika()
 
 void KsiazkaAdresowa::dodajNowegoAdresata()
 {
-    adresatMenedzer.dodajNowegoAdresata();
+    adresatMenedzer.dodajNowegoAdresata(uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika());
 }
 
 void KsiazkaAdresowa::wypiszWszystkichAdresatow()
 {
-    adresatMenedzer.wypiszWszystkichAdresatow();
+    adresatMenedzer.wypiszWszystkichAdresatow(uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika());
 }
