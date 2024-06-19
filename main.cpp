@@ -8,12 +8,15 @@ int main()
 {
     KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy2.txt");
 
-    ksiazkaAdresowa.wypiszWszystkichUzytkownikow();
+    //ksiazkaAdresowa.wypiszWszystkichUzytkownikow();
 
-    ksiazkaAdresowa.wylogujUzytkownika();
-    ksiazkaAdresowa.logowanieUzytkownika();
-    ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();
-    ksiazkaAdresowa.wylogujUzytkownika();
+   // ksiazkaAdresowa.logowanieUzytkownika();
+    //ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();
+    //ksiazkaAdresowa.wylogujUzytkownika();
+    ksiazkaAdresowa.dodajNowegoAdresata();
+    ksiazkaAdresowa.dodajNowegoAdresata();
+    ksiazkaAdresowa.dodajNowegoAdresata();
+    ksiazkaAdresowa.wypiszWszystkichAdresatow();
 
     return 0;
 }
