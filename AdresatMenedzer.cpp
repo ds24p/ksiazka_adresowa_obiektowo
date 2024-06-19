@@ -39,3 +39,8 @@ void AdresatMenedzer::wypiszWszystkichAdresatow()
         adresaci[i].wypiszAdresata();
     }
 }
+
+void AdresatMenedzer::wczytajAdresatowZPliku()
+{
+   adresaci = plikZAdresatami.wczytajAdresatowZPliku();
+}
