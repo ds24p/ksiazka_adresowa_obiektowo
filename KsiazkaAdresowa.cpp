@@ -2,6 +2,7 @@
 
 void KsiazkaAdresowa::rejestracjaUzytkownika()
 {
+    cout << "Rejestracja nowego uzytkownika" << endl;
     uzytkownikMenedzer.rejestracjaUzytkownika();
 }
 
@@ -30,7 +31,7 @@ void KsiazkaAdresowa::dodajNowegoAdresata()
     adresatMenedzer.dodajNowegoAdresata(uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika());
 }
 
-void KsiazkaAdresowa::wypiszWszystkichAdresatow()
+void KsiazkaAdresowa::wypiszWszystkichAdresatowZalogowanegoUzytkownika()
 {
     adresatMenedzer.wypiszWszystkichAdresatow(uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika());
 }

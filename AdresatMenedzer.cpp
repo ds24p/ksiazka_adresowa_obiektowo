@@ -1,10 +1,4 @@
 #include "AdresatMenedzer.h"
-#include "Adresat.h"
-
-AdresatMenedzer::AdresatMenedzer()
-{
-   wczytajAdresatowZPliku();
-}
 
 void AdresatMenedzer::dodajNowegoAdresata(int idZalogowanegoUzytkownika)
 {
@@ -36,7 +30,8 @@ void AdresatMenedzer::dodajNowegoAdresata(int idZalogowanegoUzytkownika)
 int AdresatMenedzer::znajdzId()
 {
     fstream file;
-    file.open("persons.txt", ios::in);
+    string nazwaPlikuZAdresatami = plikZAdresatami.pobierzNazwaPlikuZAdresatami();
+    file.open(nazwaPlikuZAdresatami.c_str(), ios::in);
 
     int i = 0;
     int idKontaktu = 0;

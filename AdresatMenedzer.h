@@ -1,3 +1,6 @@
+#ifndef ADRESATMANAGER_H
+#define ADRESATMANAGER_H
+
 #include <iostream>
 #include <vector>
 
@@ -10,9 +13,11 @@ class AdresatMenedzer
     PlikZAdresatami plikZAdresatami;
 
 public:
-    AdresatMenedzer();
+    AdresatMenedzer(string NAZWAPLIKUZADRESATAMI):plikZAdresatami(NAZWAPLIKUZADRESATAMI){}
     int znajdzId();
     void wypiszWszystkichAdresatow(int idZalogowanegoUzytkownika);
     void dodajNowegoAdresata(int idZalogowanegoUzytkownika);
     void wczytajAdresatowZPliku();
 };
+
+#endif

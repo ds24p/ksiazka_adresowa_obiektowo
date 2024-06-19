@@ -16,9 +16,11 @@ class PlikZAdresatami
     const string nazwaPlikuZAdresatami;
 
 public:
+    PlikZAdresatami(string NAZWAPLIKUZADRESATAMI) : nazwaPlikuZAdresatami(NAZWAPLIKUZADRESATAMI) {};
     vector <Adresat> wczytajAdresatowZPliku();
     Adresat pobierzDaneAdresata(string linia);
     void dopiszAdresataDoPliku(Adresat nowyAdresat);
+    string pobierzNazwaPlikuZAdresatami();
 };
 
 #endif
