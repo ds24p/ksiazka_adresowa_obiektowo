@@ -2,7 +2,6 @@
 
 UzytkownikMenedzer::UzytkownikMenedzer(string nazwaPlikuZUzytkownikami) : plikZUzytkownikami(nazwaPlikuZUzytkownikami)
 {
-    wczytajUzytkownikowZPliku();
     idZalogowanegoUzytkownika = 0;
 }
 
@@ -78,7 +77,7 @@ void UzytkownikMenedzer::wczytajUzytkownikowZPliku()
 
 void UzytkownikMenedzer::logowanieUzytkownika()
 {
-    string login, haslo;
+    string login, haslo = "";
     bool czyZalogowano = false;
 
     int proba = 3;
@@ -110,7 +109,7 @@ void UzytkownikMenedzer::logowanieUzytkownika()
     }
     if(!czyZalogowano)
     {
-        cout << "Nie dnaleziono uzytkownika o podanej nazwie" << endl;
+        cout << endl << "Nie dnaleziono uzytkownika." << endl;
     }
 }
 
