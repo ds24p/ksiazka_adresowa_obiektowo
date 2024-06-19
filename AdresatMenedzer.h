@@ -10,8 +10,9 @@ class AdresatMenedzer
     PlikZAdresatami plikZAdresatami;
 
 public:
+    AdresatMenedzer();
     int znajdzId();
-    void wypiszWszystkichAdresatow();
-    void dodajNowegoAdresata();
+    void wypiszWszystkichAdresatow(int idZalogowanegoUzytkownika);
+    void dodajNowegoAdresata(int idZalogowanegoUzytkownika);
     void wczytajAdresatowZPliku();
 };

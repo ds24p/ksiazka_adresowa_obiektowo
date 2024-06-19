@@ -1,11 +1,17 @@
 #include "AdresatMenedzer.h"
 #include "Adresat.h"
 
-void AdresatMenedzer::dodajNowegoAdresata()
+AdresatMenedzer::AdresatMenedzer()
+{
+   wczytajAdresatowZPliku();
+}
+
+void AdresatMenedzer::dodajNowegoAdresata(int idZalogowanegoUzytkownika)
 {
     Adresat nowyAdresat;
 
     nowyAdresat.ustawId(znajdzId());
+    nowyAdresat.ustawIdUzytkownika(idZalogowanegoUzytkownika);
 
     cout << "Podaj imie dodawanej osoby: ";
     nowyAdresat.ustawImie(MetodyPomocnicze::wczytajLinie());
@@ -19,7 +25,7 @@ void AdresatMenedzer::dodajNowegoAdresata()
     nowyAdresat.ustawAdres(MetodyPomocnicze::wczytajLinie());
 
     adresaci.push_back(nowyAdresat);
-    //writeIntoFile(nowyAdresat);
+    plikZAdresatami.dopiszAdresataDoPliku(nowyAdresat);
 
     cout << "Dodano nastepujaca osobe: " << endl << endl;
     nowyAdresat.wypiszAdresata();
@@ -29,13 +35,39 @@ void AdresatMenedzer::dodajNowegoAdresata()
 
 int AdresatMenedzer::znajdzId()
 {
-    return 1;
+    fstream file;
+    file.open("persons.txt", ios::in);
+
+    int i = 0;
+    int idKontaktu = 0;
+    string linia = "";
+    while (getline(file, linia))
+    {
+        i = 0;
+        string pomocZId = "";
+        idKontaktu = 0;
+        while (linia[i] != '|')
+        {
+            pomocZId += linia[i];
+            i++;
+        }
+        idKontaktu = stoi(pomocZId);
+    }
+    return idKontaktu + 1;
 }
 
-void AdresatMenedzer::wypiszWszystkichAdresatow()
+void AdresatMenedzer::wypiszWszystkichAdresatow(int idZalogowanegoUzytkownika)
 {
     for (size_t i = 0; i < adresaci.size(); i++)
     {
-        adresaci[i].wypiszAdresata();
+        if(idZalogowanegoUzytkownika == adresaci[i].pobierzIdUzytkownika())
+        {
+            adresaci[i].wypiszAdresata();
+        }
     }
+}
+
+void AdresatMenedzer::wczytajAdresatowZPliku()
+{
+   adresaci = plikZAdresatami.wczytajAdresatowZPliku();
 }

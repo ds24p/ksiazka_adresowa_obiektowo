@@ -2,7 +2,7 @@
 
 UzytkownikMenedzer::UzytkownikMenedzer(string nazwaPlikuZUzytkownikami) : plikZUzytkownikami(nazwaPlikuZUzytkownikami)
 {
-    uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
+    wczytajUzytkownikowZPliku();
     idZalogowanegoUzytkownika = 0;
 }
 
@@ -154,4 +154,9 @@ void UzytkownikMenedzer::wylogujUzytkownika()
         idZalogowanegoUzytkownika = 0;
         cout << "Wylogowano" << endl;
     }
+}
+
+int UzytkownikMenedzer::pobierzIdZalogowanegoUzytkownika()
+{
+    return idZalogowanegoUzytkownika;
 }

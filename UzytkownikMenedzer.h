@@ -31,6 +31,7 @@ public:
     void zmianaHaslaZalogowanegoUzytkownika();
     bool czyZalogowanoUzytkownika();
     void wylogujUzytkownika();
+    int pobierzIdZalogowanegoUzytkownika();
 };
 
 #endif

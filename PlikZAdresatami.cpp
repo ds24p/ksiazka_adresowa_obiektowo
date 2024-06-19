@@ -1,6 +1,6 @@
 #include "PlikZAdresatami.h"
 
-/*vector <Adresat> PlikZAdresatami::wczytajAdresatowZPliku()
+vector <Adresat> PlikZAdresatami::wczytajAdresatowZPliku()
 {
     Adresat nowyAdresat;
     vector <Adresat> adresaci;
@@ -17,63 +17,86 @@
     {
         while (getline(file, linia))
         {
-            nowyAdresat = splitLineIntoStructFields(linia);
-            if (newPerson.userIdPerson == currentUserId)
-            {
-                friends.push_back(newPerson);
-            }
-            numerLini++;
+            nowyAdresat = pobierzDaneAdresata(linia);
+            adresaci.push_back(nowyAdresat);
         }
     }
     return adresaci;
 }
 
-Person splitLineIntoStructFields(string line)
+Adresat PlikZAdresatami::pobierzDaneAdresata(string linia)
 {
-    Person newPerson;
+    Adresat nowyAdresat;
     char separator = '|';
     int i = 0;
-    string helpWithId = "";
-    string helpWithUserId = "";
+    string pomocZId, pomocZUserId, imie, nazwisko, numerTelefonu, email, adres = "";
 
-    int fieldNumber = 0;
-    while (line[i] != '\0')
+    int numerPola = 0;
+    while (linia[i] != '\0')
     {
-        if (line[i] != separator)
+        if (linia[i] != separator)
         {
-            switch(fieldNumber)
+            switch(numerPola)
             {
             case 0:
-                helpWithId += line[i];
+                pomocZId += linia[i];
                 break;
             case 1:
-                helpWithUserId += line[i];
+                pomocZUserId += linia[i];
                 break;
             case 2:
-                newPerson.name += line[i];
+                imie += linia[i];
                 break;
             case 3:
-                newPerson.surname += line[i];
+                nazwisko += linia[i];
                 break;
             case 4:
-                newPerson.telephoneNumber += line[i];
+                numerTelefonu += linia[i];
                 break;
             case 5:
-                newPerson.email += line[i];
+                email += linia[i];
                 break;
             case 6:
-                newPerson.adress += line[i];
+                adres += linia[i];
                 break;
             }
         }
         else
         {
-            fieldNumber++;
+            numerPola++;
         }
         i++;
     }
-    newPerson.id = stoi(helpWithId);
-    newPerson.userIdPerson = stoi(helpWithUserId);
-    return newPerson;
+    nowyAdresat.ustawId(stoi(pomocZId));
+    nowyAdresat.ustawIdUzytkownika(stoi(pomocZUserId));
+    nowyAdresat.ustawImie(imie);
+    nowyAdresat.ustawNazwisko(nazwisko);
+    nowyAdresat.ustawAdres(adres);
+    nowyAdresat.ustawNumerTelefonu(numerTelefonu);
+    nowyAdresat.ustawEmail(email);
+    return nowyAdresat;
 }
-*/
+
+void PlikZAdresatami::dopiszAdresataDoPliku(Adresat nowyAdresat)
+{
+    fstream plik;
+    plik.open("persons.txt", ios::app);
+
+    if (!plik.good())
+    {
+        cout << "Blad otwarcia pliku wyjsciowego" << endl;
+    }
+    else
+    {
+        plik << nowyAdresat.pobierzId() << "|";
+        plik << nowyAdresat.pobierzIdUzytkownika() << "|";
+        plik << nowyAdresat.pobierzImie() << "|";
+        plik << nowyAdresat.pobierzNazwisko() << "|";
+        plik << nowyAdresat.pobierzNumerTelefonu() << "|";
+        plik << nowyAdresat.pobierzEmail() << "|";
+        plik << nowyAdresat.pobierzAdres() << "|" << endl;
+    }
+
+    plik.close();
+}
+

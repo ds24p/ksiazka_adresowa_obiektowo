@@ -15,6 +15,7 @@ class Adresat
     string numerTelefonu;
     string email;
     string adres;
+
 public:
     void wypiszAdresata();
     void ustawIdUzytkownika(int noweIdUzytkownika);
