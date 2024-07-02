@@ -9,15 +9,18 @@
 
 class AdresatMenedzer
 {
+    const int ID_ZALOGOWANEGO_UZYTKOWNIKA;
     vector <Adresat> adresaci;
     PlikZAdresatami plikZAdresatami;
 
 public:
-    AdresatMenedzer(string NAZWAPLIKUZADRESATAMI):plikZAdresatami(NAZWAPLIKUZADRESATAMI){}
+    AdresatMenedzer(string NAZWAPLIKUZADRESATAMI, int idZalogowanegoUzytkownika):plikZAdresatami(NAZWAPLIKUZADRESATAMI), ID_ZALOGOWANEGO_UZYTKOWNIKA(idZalogowanegoUzytkownika)
+    {
+        adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownika(ID_ZALOGOWANEGO_UZYTKOWNIKA);
+    };
     int znajdzId();
-    void wypiszWszystkichAdresatow(int idZalogowanegoUzytkownika);
-    void dodajNowegoAdresata(int idZalogowanegoUzytkownika);
-    void wczytajAdresatowZPliku();
+    void wypiszWszystkichAdresatow();
+    void dodajNowegoAdresata();
 };
 
 #endif

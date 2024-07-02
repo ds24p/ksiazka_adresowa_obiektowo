@@ -5,7 +5,7 @@ void PlikZUzytkownikami::dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik)
     string liniaZDanymiUzytkownika = "";
     fstream plikTekstowy;
 
-    plikTekstowy.open(nazwaPlikuZUzytkownikami.c_str(), ios::app);
+    plikTekstowy.open(NAZWA_PLIKU_Z_UZYTKOWNIKAMI.c_str(), ios::app);
 
     if (plikTekstowy.good() == true)
     {
@@ -22,7 +22,7 @@ void PlikZUzytkownikami::dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik)
         plikTekstowy.close();
     }
     else
-        cout << "Nie udalo sie otworzyc pliku " << nazwaPlikuZUzytkownikami << " i zapisac w nim danych." << endl;
+        cout << "Nie udalo sie otworzyc pliku " << NAZWA_PLIKU_Z_UZYTKOWNIKAMI << " i zapisac w nim danych." << endl;
 }
 
 bool PlikZUzytkownikami::czyPlikJestPusty()
@@ -54,7 +54,7 @@ vector <Uzytkownik> PlikZUzytkownikami::wczytajUzytkownikowZPliku()
     string daneJednegoUzytkownikaOddzielonePionowymiKreskami = "";
     fstream plikTekstowy;
 
-    plikTekstowy.open(nazwaPlikuZUzytkownikami.c_str(), ios::in);
+    plikTekstowy.open(NAZWA_PLIKU_Z_UZYTKOWNIKAMI.c_str(), ios::in);
 
     if (plikTekstowy.good() == true)
     {
@@ -104,7 +104,7 @@ Uzytkownik PlikZUzytkownikami::pobierzDaneUzytkownika(string daneJednegoUzytkown
 void PlikZUzytkownikami::aktualizujPlikZUzytkownikami(vector <Uzytkownik> &uzytkownicy)
 {
     fstream plik;
-    plik.open(nazwaPlikuZUzytkownikami.c_str(), ios::out);
+    plik.open(NAZWA_PLIKU_Z_UZYTKOWNIKAMI.c_str(), ios::out);
 
     for (size_t i = 0; i < uzytkownicy.size(); i++)
     {

@@ -1,13 +1,13 @@
 #include "PlikZAdresatami.h"
 
-vector <Adresat> PlikZAdresatami::wczytajAdresatowZPliku()
+vector <Adresat> PlikZAdresatami::wczytajAdresatowZalogowanegoUzytkownika(int ID_ZALOGOWANEGO_UZYTKOWNIKA)
 {
     Adresat nowyAdresat;
     vector <Adresat> adresaci;
     fstream file;
     string linia = "";
     int numerLini = 1;
-    file.open(nazwaPlikuZAdresatami.c_str(), ios::in | ios::app);
+    file.open(NAZWA_PLIKU_Z_ADRESATAMI.c_str(), ios::in | ios::app);
 
     if (!file.good())
     {
@@ -18,7 +18,11 @@ vector <Adresat> PlikZAdresatami::wczytajAdresatowZPliku()
         while (getline(file, linia))
         {
             nowyAdresat = pobierzDaneAdresata(linia);
-            adresaci.push_back(nowyAdresat);
+            idOstatniegoAdresata = nowyAdresat.pobierzId();
+            if (nowyAdresat.pobierzIdUzytkownika() == ID_ZALOGOWANEGO_UZYTKOWNIKA)
+            {
+               adresaci.push_back(nowyAdresat);
+            }
         }
     }
     return adresaci;
@@ -77,14 +81,15 @@ Adresat PlikZAdresatami::pobierzDaneAdresata(string linia)
     return nowyAdresat;
 }
 
-void PlikZAdresatami::dopiszAdresataDoPliku(Adresat nowyAdresat)
+bool PlikZAdresatami::dopiszAdresataDoPliku(Adresat nowyAdresat)
 {
     fstream plik;
-    plik.open(nazwaPlikuZAdresatami.c_str(), ios::app);
+    plik.open(NAZWA_PLIKU_Z_ADRESATAMI.c_str(), ios::app);
 
     if (!plik.good())
     {
         cout << "Blad otwarcia pliku wyjsciowego" << endl;
+        return false;
     }
     else
     {
@@ -98,9 +103,11 @@ void PlikZAdresatami::dopiszAdresataDoPliku(Adresat nowyAdresat)
     }
 
     plik.close();
+    idOstatniegoAdresata++;
+    return true;
 }
 
-string PlikZAdresatami::pobierzNazwaPlikuZAdresatami()
+int PlikZAdresatami::pobierzIdOstatniegoAdresata()
 {
-    return nazwaPlikuZAdresatami;
+    return idOstatniegoAdresata;
 }

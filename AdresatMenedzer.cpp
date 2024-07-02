@@ -1,11 +1,11 @@
 #include "AdresatMenedzer.h"
 
-void AdresatMenedzer::dodajNowegoAdresata(int idZalogowanegoUzytkownika)
+void AdresatMenedzer::dodajNowegoAdresata()
 {
     Adresat nowyAdresat;
 
-    nowyAdresat.ustawId(znajdzId());
-    nowyAdresat.ustawIdUzytkownika(idZalogowanegoUzytkownika);
+    nowyAdresat.ustawId((plikZAdresatami.pobierzIdOstatniegoAdresata() + 1));
+    nowyAdresat.ustawIdUzytkownika(ID_ZALOGOWANEGO_UZYTKOWNIKA);
 
     cout << "Podaj imie dodawanej osoby: ";
     nowyAdresat.ustawImie(MetodyPomocnicze::wczytajLinie());
@@ -19,50 +19,22 @@ void AdresatMenedzer::dodajNowegoAdresata(int idZalogowanegoUzytkownika)
     nowyAdresat.ustawAdres(MetodyPomocnicze::wczytajLinie());
 
     adresaci.push_back(nowyAdresat);
-    plikZAdresatami.dopiszAdresataDoPliku(nowyAdresat);
-
-    cout << "Dodano nastepujaca osobe: " << endl << endl;
-    nowyAdresat.wypiszAdresata();
+    if (plikZAdresatami.dopiszAdresataDoPliku(nowyAdresat))
+    {
+        cout << "Dodano nastepujaca osobe: " << endl << endl;
+        nowyAdresat.wypiszAdresata();
+    }
+    else {
+        cout << "Nie udalo sie dodac adresata" << endl;
+    }
 
     system("pause");
 }
 
-int AdresatMenedzer::znajdzId()
-{
-    fstream file;
-    string nazwaPlikuZAdresatami = plikZAdresatami.pobierzNazwaPlikuZAdresatami();
-    file.open(nazwaPlikuZAdresatami.c_str(), ios::in);
-
-    int i = 0;
-    int idKontaktu = 0;
-    string linia = "";
-    while (getline(file, linia))
-    {
-        i = 0;
-        string pomocZId = "";
-        idKontaktu = 0;
-        while (linia[i] != '|')
-        {
-            pomocZId += linia[i];
-            i++;
-        }
-        idKontaktu = stoi(pomocZId);
-    }
-    return idKontaktu + 1;
-}
-
-void AdresatMenedzer::wypiszWszystkichAdresatow(int idZalogowanegoUzytkownika)
+void AdresatMenedzer::wypiszWszystkichAdresatow()
 {
     for (size_t i = 0; i < adresaci.size(); i++)
     {
-        if(idZalogowanegoUzytkownika == adresaci[i].pobierzIdUzytkownika())
-        {
-            adresaci[i].wypiszAdresata();
-        }
+        adresaci[i].wypiszAdresata();
     }
-}
-
-void AdresatMenedzer::wczytajAdresatowZPliku()
-{
-   adresaci = plikZAdresatami.wczytajAdresatowZPliku();
 }
