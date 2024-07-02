@@ -1,3 +1,0 @@
-1|2|Katarzyna|Paluch|567856766|kasia@op.pl|Mazurska 7 Kwidzyn|
-2|2|Mateusz|Bialak|567567567|mati@op.pl|Rzeszow|
-3|1|Martyna|Tyburska|5675675677|martyna@op.pl|Warszawa Biala 4|

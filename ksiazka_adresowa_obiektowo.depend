@@ -1,8 +1,8 @@
 # depslib dependency file v1.0
-1718818664 source:c:\projects\ksiazka_adresowa_obiektowo\ksiazkaadresowa.cpp
+1718821356 source:c:\projects\ksiazka_adresowa_obiektowo\ksiazkaadresowa.cpp
 	"KsiazkaAdresowa.h"
 
-1718817143 c:\projects\ksiazka_adresowa_obiektowo\ksiazkaadresowa.h
+1718821356 c:\projects\ksiazka_adresowa_obiektowo\ksiazkaadresowa.h
 	<iostream>
 	"UzytkownikMenedzer.h"
 	"AdresatMenedzer.h"
@@ -34,7 +34,7 @@
 1718819217 source:c:\projects\ksiazka_adresowa_obiektowo\metodypomocnicze.cpp
 	"MetodyPomocnicze.h"
 
-1718818806 source:c:\projects\ksiazka_adresowa_obiektowo\plikzuzytkownikami.cpp
+1718821356 source:c:\projects\ksiazka_adresowa_obiektowo\plikzuzytkownikami.cpp
 	"PlikZUzytkownikami.h"
 
 1708050624 source:c:\projects\ksiazka_adresowa_obiektowo\uzytkownik.cpp
@@ -43,17 +43,17 @@
 1718820092 source:c:\projects\ksiazka_adresowa_obiektowo\uzytkownikmenedzer.cpp
 	"UzytkownikMenedzer.h"
 
-1718821111 source:c:\projects\ksiazka_adresowa_obiektowo\main.cpp
+1719179722 source:c:\projects\ksiazka_adresowa_obiektowo\main.cpp
 	<iostream>
 	"KsiazkaAdresowa.h"
 
 1718758132 source:c:\projects\ksiazka_adresowa_obiektowo\adresat.cpp
 	"Adresat.h"
 
-1718816712 source:c:\projects\ksiazka_adresowa_obiektowo\plikzadresatami.cpp
+1718821356 source:c:\projects\ksiazka_adresowa_obiektowo\plikzadresatami.cpp
 	"PlikZAdresatami.h"
 
-1718816712 c:\projects\ksiazka_adresowa_obiektowo\plikzadresatami.h
+1718821356 c:\projects\ksiazka_adresowa_obiektowo\plikzadresatami.h
 	<iostream>
 	<vector>
 	<fstream>
@@ -65,10 +65,10 @@
 	<iostream>
 	<string>
 
-1718816902 source:c:\projects\ksiazka_adresowa_obiektowo\adresatmenedzer.cpp
+1718821356 source:c:\projects\ksiazka_adresowa_obiektowo\adresatmenedzer.cpp
 	"AdresatMenedzer.h"
 
-1718817677 c:\projects\ksiazka_adresowa_obiektowo\adresatmenedzer.h
+1718821356 c:\projects\ksiazka_adresowa_obiektowo\adresatmenedzer.h
 	<iostream>
 	<vector>
 	"Adresat.h"
