@@ -111,3 +111,55 @@ int PlikZAdresatami::pobierzIdOstatniegoAdresata()
 {
     return idOstatniegoAdresata;
 }
+
+void PlikZAdresatami::aktualizacjaPlikuZAdresatami(Adresat aktualizowanyAdresat, char tryb)
+{
+    fstream plik;
+    plik.open("Adresaci.txt", ios::in);
+    fstream nowyPlik;
+    nowyPlik.open("Adresaci_new.txt", ios::app);
+
+    int i = 0;
+    string linia = "";
+    while (getline(plik, linia))
+    {
+        i = 0;
+        string helpWithId = "";
+        int idAktualizowanegoAdresata = 0;
+        while (linia[i] != '|')
+        {
+            helpWithId += linia[i];
+            i++;
+        }
+        idAktualizowanegoAdresata = stoi(helpWithId);
+
+        if(idAktualizowanegoAdresata == aktualizowanyAdresat.pobierzId() && tryb == 'e')
+        {
+            nowyPlik << aktualizowanyAdresat.pobierzId() << "|";
+            nowyPlik << aktualizowanyAdresat.pobierzIdUzytkownika() << "|";
+            nowyPlik << aktualizowanyAdresat.pobierzImie() << "|";
+            nowyPlik << aktualizowanyAdresat.pobierzNazwisko() << "|";
+            nowyPlik << aktualizowanyAdresat.pobierzNumerTelefonu() << "|";
+            nowyPlik << aktualizowanyAdresat.pobierzEmail() << "|";
+            nowyPlik << aktualizowanyAdresat.pobierzAdres() << "|" << endl;
+        }
+        else if(idAktualizowanegoAdresata == aktualizowanyAdresat.pobierzId() && tryb == 'd')
+        {
+            ;
+        }
+        else
+        {
+            nowyPlik << linia << endl;
+        }
+
+    }
+    plik.close();
+    nowyPlik.close();
+
+    remove("Adresaci.txt");
+
+    if (rename("Adresaci_new.txt", "Adresaci.txt") != 0)
+		perror("Error renaming file");
+	else
+		cout << "File renamed successfully";
+}

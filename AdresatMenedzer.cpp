@@ -86,3 +86,35 @@ void AdresatMenedzer::wyszukajAdresataPoNazwisku()
     }
     system("pause");
 }
+
+void AdresatMenedzer::usunAdresata()
+{
+    int idUsuwanegoAdresata = 0;
+    bool nieIstnieje = true;
+
+    cout << "Podaj id kontaktu, ktory chcesz usunac: " << endl;
+    idUsuwanegoAdresata = MetodyPomocnicze::wczytajInt();
+
+    for (size_t i = 0; i < adresaci.size(); i++)
+    {
+        if (adresaci[i].pobierzId() == idUsuwanegoAdresata)
+        {
+            nieIstnieje = false;
+            cout << "Czy na pewno chcesz usunac kontakt o id: "<< idUsuwanegoAdresata << "? Potwierdz wybierajac 't' " << endl;
+            char choice = MetodyPomocnicze::wczytajZnak();
+            if(choice == 't')
+            {
+                cout << "Usuwam kontakt o id: " << idUsuwanegoAdresata << endl;
+                plikZAdresatami.aktualizacjaPlikuZAdresatami(adresaci[i], 'd');
+                adresaci.erase(adresaci.begin() + i);
+            }
+        }
+    }
+    if (nieIstnieje)
+    {
+        cout << "W Twojej bazie przyjaciol nie istnieje kontakt o podanym id. "
+             << endl
+             << endl;
+    }
+    system("pause");
+}

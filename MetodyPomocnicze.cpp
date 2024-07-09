@@ -61,3 +61,22 @@ void MetodyPomocnicze::wyswietlMenuUzytkownika()
     cout << "9. Wyloguj sie" << endl;
 }
 
+int MetodyPomocnicze::wczytajInt()
+{
+    string input;
+    int liczba;
+
+    while(true)
+    {
+        getline(cin, input);
+
+        stringstream myStream(input);
+
+        if (myStream >> liczba)
+        {
+            break;
+        }
+        cout << "To nie jest liczba. Wpisz ponownie" << endl;
+    }
+    return liczba;
+}
