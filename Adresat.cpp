@@ -79,3 +79,43 @@ string Adresat::pobierzAdres()
 {
     return adres;
 }
+
+void Adresat::edytujDaneAdresata()
+{
+    char wybor = 0;
+    while (wybor != '6')
+    {
+        MetodyPomocnicze::wyswietlMenuEdycjiAdresata();
+        wybor = MetodyPomocnicze::wczytajZnak();
+
+        switch (wybor)
+        {
+        case '1':
+            cout << "Nowe imie: " << endl;
+            ustawImie(MetodyPomocnicze::wczytajLinie());
+            break;
+        case '2':
+            cout << "Nowe nazwisko: " << endl;
+            ustawNazwisko(MetodyPomocnicze::wczytajLinie());
+            break;
+        case '3':
+            cout << "Nowy numer telefonu: " << endl;
+            ustawNumerTelefonu(MetodyPomocnicze::wczytajLinie());
+            break;
+        case '4':
+            cout << "Nowy adres email: " << endl;
+            ustawEmail(MetodyPomocnicze::wczytajLinie());
+            break;
+        case '5':
+            cout << "Nowy adres zamieszkania: " << endl;
+            ustawAdres(MetodyPomocnicze::wczytajLinie());
+            break;
+        case '6':
+            break;
+        default:
+            cout << "Wprowadziles znak nieobslugiwany przez menu programu. Sproboj ponownie." << endl;
+            system("pause");
+            break;
+        }
+    }
+}

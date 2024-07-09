@@ -14,6 +14,8 @@ public:
     static char wczytajZnak();
     static void wyswietlMenuGlowne();
     static void wyswietlMenuUzytkownika();
+    static int wczytajInt();
+    static void wyswietlMenuEdycjiAdresata();
 };
 
 #endif

@@ -44,10 +44,10 @@ int main()
                         system("pause");
                         break;
                     case '5':
-                        //deleteContact(friends);
+                        ksiazkaAdresowa.usunAdresata();
                         break;
                     case '6':
-                        //editContact(friends);
+                        ksiazkaAdresowa.edytujAdresata();
                         break;
                     case '7':
                         ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();

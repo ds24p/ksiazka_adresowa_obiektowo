@@ -4,6 +4,8 @@
 #include <iostream>
 #include <string>
 
+#include "MetodyPomocnicze.h"
+
 using namespace std;
 
 class Adresat
@@ -17,7 +19,7 @@ class Adresat
     string adres;
 
 public:
-    Adresat (int id = 0, int idUzytkownika =0, string imie = "", string nazwisko = "", string numerTelefonu = "", string email = "", string adres ="")
+    Adresat (int id = 0, int idUzytkownika = 0, string imie = "", string nazwisko = "", string numerTelefonu = "", string email = "", string adres ="")
     {
         this->id = id;
         this->idUzytkownika = idUzytkownika;
@@ -42,6 +44,7 @@ public:
     string pobierzNumerTelefonu();
     string pobierzEmail();
     string pobierzAdres();
+    void edytujDaneAdresata();
 };
 
 #endif

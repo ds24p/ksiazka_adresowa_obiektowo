@@ -86,3 +86,69 @@ void AdresatMenedzer::wyszukajAdresataPoNazwisku()
     }
     system("pause");
 }
+
+void AdresatMenedzer::usunAdresata()
+{
+    int idUsuwanegoAdresata = 0;
+    bool nieIstnieje = true;
+
+    cout << "Podaj id kontaktu, ktory chcesz usunac: " << endl;
+    idUsuwanegoAdresata = MetodyPomocnicze::wczytajInt();
+
+    for (size_t i = 0; i < adresaci.size(); i++)
+    {
+        if (adresaci[i].pobierzId() == idUsuwanegoAdresata)
+        {
+            nieIstnieje = false;
+            cout << "Czy na pewno chcesz usunac kontakt o id: "<< idUsuwanegoAdresata << "? Potwierdz wybierajac 't' " << endl;
+            char choice = MetodyPomocnicze::wczytajZnak();
+            if(choice == 't')
+            {
+                cout << "Usuwam kontakt o id: " << idUsuwanegoAdresata << endl;
+                plikZAdresatami.aktualizacjaPlikuZAdresatami(adresaci[i], 'd');
+                adresaci.erase(adresaci.begin() + i);
+            }
+        }
+    }
+    if (nieIstnieje)
+    {
+        cout << "W Twojej bazie przyjaciol nie istnieje kontakt o podanym id. "
+             << endl
+             << endl;
+    }
+    system("pause");
+}
+
+void AdresatMenedzer::edytujAdresata()
+{
+    int idEdytowanegoAdresata = 0;
+    bool nieIstnieje = true;
+
+    cout << "Podaj id kontaktu, ktory chcesz edytowac: " << endl;
+    idEdytowanegoAdresata = MetodyPomocnicze::wczytajInt();
+
+    for (size_t i = 0; i < adresaci.size(); i++)
+    {
+        if (adresaci[i].pobierzId() == idEdytowanegoAdresata)
+        {
+            nieIstnieje = false;
+            cout << "Edycja kontaktu o id: " << idEdytowanegoAdresata << endl;
+            adresaci[i].edytujDaneAdresata();
+            cout << "Dane kontaktu po edycji:" << endl;
+            adresaci[i].wypiszAdresata();
+            plikZAdresatami.aktualizacjaPlikuZAdresatami(adresaci[i], 'e');
+        }
+    }
+    if (nieIstnieje)
+    {
+        cout << "W Twojej bazie przyjaciol nie istnieje kontakt o podanym id. Wybierz opcje: "
+             << endl << "1. Ponowne wprowadzenie id" << endl
+             << endl << "Dowolny znak. Powrot do menu glownego" << endl;
+        int wybor = MetodyPomocnicze::wczytajZnak();
+        if(wybor == '1')
+        {
+            edytujAdresata();
+        }
+    }
+    system("pause");
+}

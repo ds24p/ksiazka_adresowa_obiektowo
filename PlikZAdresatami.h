@@ -27,6 +27,7 @@ public:
     int pobierzIdOstatniegoAdresata();
     void usunAdresataZPliku(int idAdresata);
     void edytujAdresataWPliku(Adresat adresat);
+    void aktualizacjaPlikuZAdresatami(Adresat aktualizowanyAdresat, char tryb);
 };
 
 #endif
