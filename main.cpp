@@ -20,7 +20,10 @@ int main()
         case '1':
             if(!ksiazkaAdresowa.czyUzytkownikJestZalogowany())
             {
-                ksiazkaAdresowa.logowanieUzytkownika();
+                if(ksiazkaAdresowa.logowanieUzytkownika() == 0)
+                {
+                    break;
+                }
                 char wyborMenuUzytkownika = 0;
 
                 while (wyborMenuUzytkownika != '9')
@@ -53,7 +56,7 @@ int main()
                         ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();
                         break;
                     case '9':
-                        cout << "Nastapi wylogowanie uzytkownika o Id." << endl;
+                        cout << "Nastapi wylogowanie uzytkownika" << endl;
                         ksiazkaAdresowa.wylogujUzytkownika();
                         system("pause");
                         break;

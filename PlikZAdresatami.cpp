@@ -7,7 +7,7 @@ vector <Adresat> PlikZAdresatami::wczytajAdresatowZalogowanegoUzytkownika(int ID
     fstream file;
     string linia = "";
     int numerLini = 1;
-    file.open(NAZWA_PLIKU_Z_ADRESATAMI.c_str(), ios::in | ios::app);
+    file.open(pobierzNazwePliku().c_str(), ios::in | ios::app);
 
     if (!file.good())
     {
@@ -84,7 +84,7 @@ Adresat PlikZAdresatami::pobierzDaneAdresata(string linia)
 bool PlikZAdresatami::dopiszAdresataDoPliku(Adresat nowyAdresat)
 {
     fstream plik;
-    plik.open(NAZWA_PLIKU_Z_ADRESATAMI.c_str(), ios::app);
+    plik.open(pobierzNazwePliku().c_str(), ios::app);
 
     if (!plik.good())
     {
@@ -161,5 +161,5 @@ void PlikZAdresatami::aktualizacjaPlikuZAdresatami(Adresat aktualizowanyAdresat,
     if (rename("Adresaci_new.txt", "Adresaci.txt") != 0)
 		perror("Error renaming file");
 	else
-		cout << "File renamed successfully";
+		cout << "File renamed successfully" << endl;
 }

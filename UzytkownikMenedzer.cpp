@@ -100,7 +100,7 @@ void UzytkownikMenedzer::logowanieUzytkownika()
     }
     if(!czyZalogowano)
     {
-        cout << endl << "Nie dnaleziono uzytkownika." << endl;
+        cout << endl << "Nie dnaleziono uzytkownika. Sproboj ponownie." << endl;
     }
     system("pause");
 }
