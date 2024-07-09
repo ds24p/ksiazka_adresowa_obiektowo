@@ -54,3 +54,13 @@ bool KsiazkaAdresowa::czyUzytkownikJestZalogowany()
 {
     return uzytkownikMenedzer.czyZalogowanoUzytkownika();
 }
+
+void KsiazkaAdresowa::wyszukajAdresataPoImieniu()
+{
+    adresatMenedzer->wyszukajAdresataPoImieniu();
+}
+
+void KsiazkaAdresowa::wyszukajAdresataPoNazwisku()
+{
+    adresatMenedzer->wyszukajAdresataPoNazwisku();
+}

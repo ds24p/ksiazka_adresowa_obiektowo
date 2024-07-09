@@ -32,6 +32,10 @@ public:
     void dodajNowegoAdresata();
     void wypiszWszystkichAdresatowZalogowanegoUzytkownika();
     bool czyUzytkownikJestZalogowany();
+    void wyszukajAdresataPoImieniu();
+    void wyszukajAdresataPoNazwisku();
+    void edytujAdresata();
+    void usunAdresata();
 };
 
 #endif
