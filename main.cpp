@@ -34,10 +34,10 @@ int main()
                         ksiazkaAdresowa.dodajNowegoAdresata();
                         break;
                     case '2':
-                        //searchForName(friends);
+                        ksiazkaAdresowa.wyszukajAdresataPoImieniu();
                         break;
                     case '3':
-                        //searchForSurname(friends);
+                        ksiazkaAdresowa.wyszukajAdresataPoNazwisku();
                         break;
                     case '4':
                         ksiazkaAdresowa.wypiszWszystkichAdresatowZalogowanegoUzytkownika();

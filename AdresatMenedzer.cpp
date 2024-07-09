@@ -38,3 +38,51 @@ void AdresatMenedzer::wypiszWszystkichAdresatow()
         adresaci[i].wypiszAdresata();
     }
 }
+
+void AdresatMenedzer::wyszukajAdresataPoImieniu()
+{
+    string szukaneImie;
+    bool nieIstnieje = true;
+    cout << "Podaj imie osoby/osob ktore chcesz znalezc: ";
+    szukaneImie = MetodyPomocnicze::wczytajLinie();
+
+    for (size_t i = 0; i < adresaci.size(); i++)
+    {
+        if (adresaci[i].pobierzImie() == szukaneImie)
+        {
+            adresaci[i].wypiszAdresata();
+            nieIstnieje = false;
+        }
+    }
+    if (nieIstnieje)
+    {
+        cout << "W Twojej bazie przyjaciol nie istnieje osoba o podanym imieniu. "
+             << endl
+             << endl;
+    }
+    system("pause");
+}
+
+void AdresatMenedzer::wyszukajAdresataPoNazwisku()
+{
+    string szukaneNazwisko;
+    bool nieIstnieje = true;
+    cout << "Podaj nazwisko osoby/osob ktore chcesz znalezc: ";
+    szukaneNazwisko = MetodyPomocnicze::wczytajLinie();
+
+    for (size_t i = 0; i < adresaci.size(); i++)
+    {
+        if (adresaci[i].pobierzNazwisko() == szukaneNazwisko)
+        {
+            adresaci[i].wypiszAdresata();
+            nieIstnieje = false;
+        }
+    }
+    if (nieIstnieje)
+    {
+        cout << "W Twojej bazie przyjaciol nie istnieje osoba o podanym nazwisku. "
+             << endl
+             << endl;
+    }
+    system("pause");
+}

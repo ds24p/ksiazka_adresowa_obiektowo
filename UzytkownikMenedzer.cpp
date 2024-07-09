@@ -102,6 +102,7 @@ void UzytkownikMenedzer::logowanieUzytkownika()
     {
         cout << endl << "Nie dnaleziono uzytkownika." << endl;
     }
+    system("pause");
 }
 
 void UzytkownikMenedzer::zmianaHaslaZalogowanegoUzytkownika()

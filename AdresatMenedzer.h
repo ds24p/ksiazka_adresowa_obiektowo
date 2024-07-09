@@ -21,6 +21,10 @@ public:
     int znajdzId();
     void wypiszWszystkichAdresatow();
     void dodajNowegoAdresata();
+    void wyszukajAdresataPoImieniu();
+    void wyszukajAdresataPoNazwisku();
+    void edytujAdresata();
+    void usunAdresata();
 };
 
 #endif

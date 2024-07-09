@@ -25,6 +25,8 @@ public:
     Adresat pobierzDaneAdresata(string linia);
     bool dopiszAdresataDoPliku(Adresat nowyAdresat);
     int pobierzIdOstatniegoAdresata();
+    void usunAdresataZPliku(int idAdresata);
+    void edytujAdresataWPliku(Adresat adresat);
 };
 
 #endif
