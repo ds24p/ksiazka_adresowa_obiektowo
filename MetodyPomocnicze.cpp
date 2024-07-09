@@ -80,3 +80,15 @@ int MetodyPomocnicze::wczytajInt()
     }
     return liczba;
 }
+
+void MetodyPomocnicze::wyswietlMenuEdycjiAdresata()
+{
+    system("cls");
+    cout << "Wybierz odpowiednia opcje:" << endl;
+    cout << "1. Edycja imienia" << endl;
+    cout << "2. Edycja nazwiska" << endl;
+    cout << "3. Edycja numeru telefonu" << endl;
+    cout << "4. Edycja adresu email" << endl;
+    cout << "5. Edycja adresu" << endl;
+    cout << "6. Powrot do menu glownego" << endl;
+}

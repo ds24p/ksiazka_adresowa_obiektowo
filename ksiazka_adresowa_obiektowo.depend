@@ -27,11 +27,11 @@
 	"Uzytkownik.h"
 	"MetodyPomocnicze.h"
 
-1720543096 c:\projects\ksiazka_adresowa_obiektowo\metodypomocnicze.h
+1720544591 c:\projects\ksiazka_adresowa_obiektowo\metodypomocnicze.h
 	<iostream>
 	<sstream>
 
-1720543093 source:c:\projects\ksiazka_adresowa_obiektowo\metodypomocnicze.cpp
+1720544588 source:c:\projects\ksiazka_adresowa_obiektowo\metodypomocnicze.cpp
 	"MetodyPomocnicze.h"
 
 1719946872 source:c:\projects\ksiazka_adresowa_obiektowo\plikzuzytkownikami.cpp
@@ -43,11 +43,11 @@
 1720542353 source:c:\projects\ksiazka_adresowa_obiektowo\uzytkownikmenedzer.cpp
 	"UzytkownikMenedzer.h"
 
-1720542353 source:c:\projects\ksiazka_adresowa_obiektowo\main.cpp
+1720544233 source:c:\projects\ksiazka_adresowa_obiektowo\main.cpp
 	<iostream>
 	"KsiazkaAdresowa.h"
 
-1718758132 source:c:\projects\ksiazka_adresowa_obiektowo\adresat.cpp
+1720545213 source:c:\projects\ksiazka_adresowa_obiektowo\adresat.cpp
 	"Adresat.h"
 
 1720544015 source:c:\projects\ksiazka_adresowa_obiektowo\plikzadresatami.cpp
@@ -61,11 +61,12 @@
 	"Adresat.h"
 	"MetodyPomocnicze.h"
 
-1719946872 c:\projects\ksiazka_adresowa_obiektowo\adresat.h
+1720545498 c:\projects\ksiazka_adresowa_obiektowo\adresat.h
 	<iostream>
 	<string>
+	"MetodyPomocnicze.h"
 
-1720543936 source:c:\projects\ksiazka_adresowa_obiektowo\adresatmenedzer.cpp
+1720545381 source:c:\projects\ksiazka_adresowa_obiektowo\adresatmenedzer.cpp
 	"AdresatMenedzer.h"
 
 1720542353 c:\projects\ksiazka_adresowa_obiektowo\adresatmenedzer.h

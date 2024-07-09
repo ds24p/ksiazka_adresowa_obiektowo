@@ -118,3 +118,37 @@ void AdresatMenedzer::usunAdresata()
     }
     system("pause");
 }
+
+void AdresatMenedzer::edytujAdresata()
+{
+    int idEdytowanegoAdresata = 0;
+    bool nieIstnieje = true;
+
+    cout << "Podaj id kontaktu, ktory chcesz edytowac: " << endl;
+    idEdytowanegoAdresata = MetodyPomocnicze::wczytajInt();
+
+    for (size_t i = 0; i < adresaci.size(); i++)
+    {
+        if (adresaci[i].pobierzId() == idEdytowanegoAdresata)
+        {
+            nieIstnieje = false;
+            cout << "Edycja kontaktu o id: " << idEdytowanegoAdresata << endl;
+            adresaci[i].edytujDaneAdresata();
+            cout << "Dane kontaktu po edycji:" << endl;
+            adresaci[i].wypiszAdresata();
+            plikZAdresatami.aktualizacjaPlikuZAdresatami(adresaci[i], 'e');
+        }
+    }
+    if (nieIstnieje)
+    {
+        cout << "W Twojej bazie przyjaciol nie istnieje kontakt o podanym id. Wybierz opcje: "
+             << endl << "1. Ponowne wprowadzenie id" << endl
+             << endl << "Dowolny znak. Powrot do menu glownego" << endl;
+        int wybor = MetodyPomocnicze::wczytajZnak();
+        if(wybor == '1')
+        {
+            edytujAdresata();
+        }
+    }
+    system("pause");
+}
